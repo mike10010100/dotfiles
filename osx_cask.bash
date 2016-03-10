@@ -8,7 +8,12 @@ brew cask install karabiner
 brew cask install dropbox
 brew cask install vlc
 brew cask install audacity
-brew cask install textexpander
+brew cask install sourcetree
+brew cask install gephi
+brew cask install otto
+brew cask install consul
+brew cask install iterm2
+brew cask install atom
 brew cask install sketch
 brew cask install kaleidoscope
 brew cask install xquartz

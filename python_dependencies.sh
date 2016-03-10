@@ -1,3 +1,3 @@
 #!/bin/sh
 
-sudo pip install virtualenv
+sudo pip -r ./pip.txt

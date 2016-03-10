@@ -75,7 +75,7 @@ defaults write com.apple.dock mru-spaces -bool false
 # 12: Notification Center
 
 ### Top left screen corner: nothing
-defaults write com.apple.dock wvous-tl-corner -int 0
+defaults write com.apple.dock wvous-tl-corner -int 5
 defaults write com.apple.dock wvous-tl-modifier -int 0
 
 ### Top right screen corner: notification center
@@ -83,7 +83,7 @@ defaults write com.apple.dock wvous-tr-corner -int 12
 defaults write com.apple.dock wvous-tr-modifier -int 0
 
 ### Bottom left screen corner: start screen saver
-defaults write com.apple.dock wvous-bl-corner -int 5
+defaults write com.apple.dock wvous-bl-corner -int 0
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
 # Accessibility
@@ -130,4 +130,3 @@ defaults write com.apple.Safari "UserStyleSheetLocationURLString" "~/dotfiles/ca
 killall Finder
 killall Safari
 killall Dock
-

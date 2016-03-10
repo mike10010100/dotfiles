@@ -1,5 +1,5 @@
 " .vimrc
-" phajas
+" phallen
 " Originally written Feb 1, 2014
 
 " vim:fdm=marker
@@ -204,7 +204,7 @@ set statusline+=\ %l:
 
 " Column
 
-set statusline+=\ %c\ 
+set statusline+=\ %c\
 
 " }}}
 " Line numbers {{{
@@ -472,4 +472,3 @@ set ttyfast
 set lazyredraw
 
 " }}}
-
