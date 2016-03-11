@@ -40,3 +40,6 @@ git submodule update
 
 echo "Configuring OS X settings..."
 bash osx.bash
+
+echo "Configuring Ansible for current job"
+bash ansible.bash

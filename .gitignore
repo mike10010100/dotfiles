@@ -21,6 +21,10 @@ fish_history
 fishd.*
 *.menu
 
+# zsh related files
+.zsh*
+.oh-my*
+
 # cmus related
 
 cmus/.config/cmus/autosave
