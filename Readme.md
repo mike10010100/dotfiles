@@ -1,4 +1,4 @@
-# phajas dotfiles
+# peterhallen dotfiles
 
 ## If you see a setting, they blew it
 
@@ -11,7 +11,7 @@ I have a bunch of these. They all live here.
 1. Clone this repository into your home directory:
 
         cd
-        git clone https://github.com/peterhajas/dotfiles.git
+        git clone https://github.com/peterhallen/dotfiles.git
 
 2. Go to the `dotfiles` directory:
 
@@ -24,5 +24,3 @@ I have a bunch of these. They all live here.
         sh update.sh
 
 That's it! If you had any configuration files, `stow` should leave them alone and not stomp on them. If you'd like to uninstall specific apps, you can do so by running `stow -D APPNAME` in the `dotfiles` directory. To install them again, run `stow APPNAME`.
-
-Questions? Comments? `emacs`? I'm [@peterhajas](http://twitter.com/peterhajas).

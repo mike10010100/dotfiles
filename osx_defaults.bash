@@ -1,6 +1,10 @@
 #!/bin/bash
 
 # Global settings
+# Store screenshots in a custom location
+SS_PATH='/Users/pete/Pictures/SS'
+mkdir -p $SS_PATH
+defaults write com.apple.screencapture location $SS_PATH
 
 ## Set highlight color to orange
 defaults write NSGlobalDomain AppleHighlightColor -string ".8156 0.501 .2156"
