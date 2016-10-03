@@ -1,4 +1,4 @@
-# peterhallen dotfiles
+# mike10010100 dotfiles
 
 ## If you see a setting, they blew it
 
