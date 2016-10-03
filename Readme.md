@@ -11,7 +11,7 @@ I have a bunch of these. They all live here.
 1. Clone this repository into your home directory:
 
         cd
-        git clone https://github.com/peterhallen/dotfiles.git
+        git clone https://github.com/mike10010100/dotfiles.git
 
 2. Go to the `dotfiles` directory:
 

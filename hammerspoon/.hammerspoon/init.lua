@@ -65,7 +65,7 @@ function notify(notificationString)
 end
 
 function notifyUrgently(notificationString)
-    hs.messages.iMessage("peterhajas@gmail.com", notificationString)
+    hs.messages.iMessage("mike10010100@gmail.com", notificationString)
     local messagesApp = hs.appfinder.appFromName("Messages")
     if messagesApp then
         messagesApp:hide()

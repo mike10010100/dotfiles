@@ -10,16 +10,16 @@
   helper = osxkeychain
 
 [user]
-	email = pete.hallen@gmail.com
-	name = Pete Hallen
+	email = mike10010100@gmail.com
+	name = Michael Paulauski
 
 [push]
 	default = simple
 [core]
-	excludesfile = /Users/pete/.gitignore_global
+	excludesfile = /Users/michaelpaulauski/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
 [mergetool "sourcetree"]
-	cmd = /Users/pete/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Users/michaelpaulauski/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

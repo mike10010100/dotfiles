@@ -2,7 +2,7 @@
 
 # Global settings
 # Store screenshots in a custom location
-SS_PATH='/Users/pete/Pictures/SS'
+SS_PATH='/Users/michael/Pictures/SS'
 mkdir -p $SS_PATH
 defaults write com.apple.screencapture location $SS_PATH
 
