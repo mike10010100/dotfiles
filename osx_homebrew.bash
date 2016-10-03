@@ -1,5 +1,12 @@
 #!/bin/bash
 
+brew install zsh
+brew cask install spectacle
+brew cask install xquartz
+brew cask install java
+brew install thefuck
+brew install lighttpd
+brew install zsh-syntax-highlighting
 brew install fish
 brew install vim
 brew install stow
