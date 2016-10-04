@@ -4,6 +4,7 @@ brew install zsh
 brew cask install spectacle
 brew cask install xquartz
 brew cask install java
+brew install doxygen
 brew install thefuck
 brew install lighttpd
 brew install zsh-syntax-highlighting
