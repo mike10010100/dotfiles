@@ -14,6 +14,7 @@ brew cask install otto
 brew cask install consul
 brew cask install iterm2
 brew cask install atom
+brew cask install sublime-text
 brew cask install sketch
 brew cask install kaleidoscope
 brew cask install xquartz
