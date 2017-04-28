@@ -19,7 +19,7 @@ brew install lighttpd
 brew install wget
 brew install htop
 brew install wine
-brew install sloccount
+brew install cloc
 brew install datamash
 brew install lua
 brew install python
@@ -149,3 +149,6 @@ brew install wrk
 brew install xz
 brew install zookeeper
 brew install zsh
+brew install ag
+
+# Hi Peter! Are you adding software here? If so, make sure to add it to linux_apt_get.bash if it makes sense. Sincerely, Past Peter

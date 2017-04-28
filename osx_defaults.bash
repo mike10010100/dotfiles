@@ -18,6 +18,9 @@ defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 ## Show scrollbars when scrolling
 defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 
+## Don't correct spelling
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
 # Finder / File Panels
 
 ## Expand save panel by default
@@ -49,9 +52,9 @@ defaults write com.apple.dock showhidden -bool true
 
 # Menu Bar
 
-## Hide the Menu Bar
+## Show the Menu Bar
 
-defaults write "Apple Global Domain" "_HIHideMenuBar" 1
+defaults write "Apple Global Domain" "_HIHideMenuBar" 0
 
 # Desktop / Screensaver
 

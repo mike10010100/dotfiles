@@ -1,3 +1,12 @@
+[core]
+	editor = vim
+	excludesfile = /Users/michaelpaulauski/.gitignore_global
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[init]
+	templatedir = ~/.git_template
 [alias]
   l = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]\" --decorate --date=short --graph
   fshow = ! sh -c 'git show --pretty="format:" --name-only $1 | grep -v "^$" | uniq | sed -e "s#^#`git rev-parse --show-toplevel`/#"' -
@@ -15,8 +24,6 @@
 
 [push]
 	default = simple
-[core]
-	excludesfile = /Users/michaelpaulauski/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =

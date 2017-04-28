@@ -126,7 +126,7 @@ filetype plugin indent on
 
 " Highlight folds to be the same as the background
 
-hi Folded ctermbg=236
+hi Folded ctermbg=black
 
 " Font
 
@@ -145,11 +145,6 @@ set t_Co=256
 " Disable everything in the GUI by passing empty guioptions
 
 set guioptions=
-
-" When a line exceeds 80 characters, color the 81st character red
-
-highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
-match OverLength /\%81v/
 
 " }}}
 " Status Line {{{
@@ -178,23 +173,16 @@ set statusline+=\ %m
 
 set statusline+=%=
 
-" File kind
+" Line
 
-set statusline+=%y
-
-" Encoding
-
-set statusline+=\ %{strlen(&fenc)?&fenc:'none'}
-
-" File type
-
-set statusline+=[%{&ff}]
+set statusline+=\ %l
+set statusline+=\/
 
 " Total lines
 
-set statusline+=\ (%L)
+set statusline+=\%L
 
-" Percentage
+" Always hide the status line. This can always be re-enabled.
 
 set statusline+=\ %P\ :
 
@@ -205,6 +193,7 @@ set statusline+=\ %l:
 " Column
 
 set statusline+=\ %c\
+set laststatus=0
 
 " }}}
 " Line numbers {{{
@@ -232,6 +221,13 @@ function ToggleNumbers()
 endfunction
 
 nmap <silent> <leader>n :call ToggleNumbers() <CR>
+
+" }}}
+" Mouse Support {{{
+
+" Turn on mouse support
+
+set mouse=a
 
 " }}}
 " Folding {{{
@@ -264,7 +260,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Editing:
 
-NeoBundle 'Keithbsmiley/swift.vim'
+NeoBundle 'keith/swift.vim'
 NeoBundle 'dag/vim-fish'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'tpope/vim-afterimage'
@@ -272,7 +268,6 @@ NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-obsession'
 NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-sensible'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-vinegar'
@@ -319,7 +314,7 @@ vmap <leader>/ :Commentary <CR>
 " Ctrl-P
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 let g:ctrlp_map = '<leader>,'
 let g:ctrlp_switch_buffer = 0
 
@@ -354,11 +349,8 @@ let g:ProseModeActive = exists('w:ProseModeActive') ? w:ProseModeActive : 0
 function EnterProseMode()
     let g:ProseModeActive = 1
     Goyo
-    Pencil
+    SoftPencil
     call lexical#init()
-    set noshowmode
-    set nolist
-    set listchars=
     set nocursorline
 endfunction
 
@@ -366,9 +358,6 @@ function ExitProseMode()
     let g:ProseModeActive = 0
     Goyo!
     NoPencil
-    set showmode
-    set list
-    set listchars=tab:▸\ ,eol:¬
     set cursorline
 endfunction
 
@@ -395,80 +384,90 @@ nmap <silent> <leader>m :call OpenInMarked2() <CR> <CR>
 " Misc. {{{
 
 " Don't be `vi` compatible
-
 set nocompatible
 
 " Change the default shell vim uses to avoid a warning from Syntastic
-
 set shell=bash
 
 " Change vim's character encoding to UTF-8
-
 set encoding=utf-8
 
 " Never let there be less than 15 spaces above/below the insertion point
-
 set scrolloff=15
 
 " Automatically indent
-
 set autoindent
 
 " Show the current mode
-
 set showmode
 
 " Enable wildcard matching for commands. Complete until the longest common
 " string
-
 set wildmenu
 set wildmode=list:longest
 
 " Instead of beeping, use the visual bell
-
 set visualbell
 
-" Show the current line & column number of the cursor position
-
-set ruler
-
 " Not sure.
-
 set backspace=indent,eol,start
 
-" Always give the last window a statusline
-
-set laststatus=2
-
-" Always show the tab line
-
-set showtabline=2
+" Only show the tab line if there are >1 tabs
+set showtabline=1
 
 " Keep an undo file. TODO: Do we need this? Seems annoying...
-
 set undofile
 
 " Don't keep a backup file or swap file
-
 set nobackup
 set noswapfile
 
 " Save all the time, automatically. It's 2015, computers should do this.
-
 set autowriteall
 
 " If a file has changed outside of vim, reload it (it seems MacVim may do this
 " automatically, but terminal vim does not)
-
 set autoread
 
 " Sets up the clipboard to interface with the system clipboard
-
 set clipboard=unnamed
 
 " Turn on ttyfast and lazyredraw for speed in the Terminal
-
 set ttyfast
 set lazyredraw
+
+" Disable non-text characters by coloring them like the background
+highlight EndOfBuffer ctermfg=black ctermbg=black
+
+" Don't show text control characters
+set nolist
+
+" Let filetype plugins do indents
+if has('autocmd')
+  filetype plugin indent on
+endif
+
+" Turn on syntax highlighting if possible
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
+endif
+
+" Turn on "smarttab" for tab insertion / deletion
+set smarttab
+
+" For combos, give me 100 units of time (ms?) to hit a combo
+set ttimeout
+set ttimeoutlen=100
+
+" Delete comment character when joining commented lines
+set formatoptions+=j 
+
+" Have a command history of 1000
+set history=1000
+
+" Not sure
+if !empty(&viminfo)
+  set viminfo^=!
+endif
 
 " }}}
